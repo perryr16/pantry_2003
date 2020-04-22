@@ -18,10 +18,10 @@ class RecipeTest < MiniTest::Test
     assert_equal ({}), recipe1.ingredients_required
   end
 
-  def test_case_nam
+  def test_it_adds_and_returns_ingredients_required
+    recipe1 = Recipe.new("Mac and Cheese")
     ingredient1 = Ingredient.new({name: "Cheese", unit: "C", calories: 100})
     ingredient2 = Ingredient.new({name: "Macaroni", unit: "oz", calories: 30})
-    recipe1 = Recipe.new("Mac and Cheese")
     recipe1.add_ingredient(ingredient1, 2)
     recipe1.add_ingredient(ingredient1, 4)
     recipe1.add_ingredient(ingredient2, 8)
@@ -30,15 +30,21 @@ class RecipeTest < MiniTest::Test
     assert_equal expected, recipe1.ingredients_required
   end
 
+  def test_it_returns_ingredients
+    recipe1 = Recipe.new("Mac and Cheese")
+    ingredient1 = Ingredient.new({name: "Cheese", unit: "C", calories: 100})
+    ingredient2 = Ingredient.new({name: "Macaroni", unit: "oz", calories: 30})
+    recipe1.add_ingredient(ingredient1, 2)
+    recipe1.add_ingredient(ingredient1, 4)
+    recipe1.add_ingredient(ingredient2, 8)
+
+    assert_equal [ingredient1, ingredient2], recipe1.ingredients
+  end
+
 end
 
 
-#
-#
-#
-#
-# # => {#<Ingredient:0x00007fd7811553c8...> => 6, #<Ingredient:0x00007fd78110b0e8...> => 8}
-#
+
 #recipe1.ingredients
 # # => [#<Ingredient:0x007fe8438c7a70...>, #<Ingredient:0x007fe843857f40...>]
 #
