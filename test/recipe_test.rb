@@ -2,7 +2,6 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require 'pry'
 require './lib/ingredient'
-require './lib/pantry'
 require './lib/recipe'
 
 class RecipeTest < MiniTest::Test
@@ -42,7 +41,7 @@ class RecipeTest < MiniTest::Test
   end
 
   def test_it_returns_total_calories
-    pantry = Pantry.new
+    # pantry = Pantry.new
     #cookbook = CookBook.new
     ingredient1 = Ingredient.new({name: "Cheese", unit: "C", calories: 100})
     ingredient2 = Ingredient.new({name: "Macaroni", unit: "oz", calories: 30})

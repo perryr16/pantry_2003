@@ -54,14 +54,3 @@ class PantryTest < MiniTest::Test
 
 
 end
-
-#
-#
-#
-# # => false
-#
-#
-# # => false
-#
-#
-# # => true
