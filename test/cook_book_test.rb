@@ -13,16 +13,21 @@ class CookBookTest < MiniTest::Test
     assert_instance_of CookBook, cookbook
   end
 
+  def test_it_returns_recipes_as_arrays
+    cookbook = CookBook.new
+    recipe1 = Recipe.new("Mac and Cheese")
+    recipe2 = Recipe.new("Cheese Burger")
+    cookbook.add_recipe(recipe1)
+    cookbook.add_recipe(recipe2)
+    assert_equal [recipe1, recipe2], cookbook.recipes
+
+  end
+
 end
 
-#recipe2 = Recipe.new("Cheese Burger")
 #
-#cookbook = CookBook.new
 # # => #<CookBook:0x00007faae6a42228 @recipes=[]>
 #
-#cookbook.add_recipe(recipe1)
 #
-#cookbook.add_recipe(recipe2)
 #
-#cookbook.recipes
 # # => [#<Recipe:0x00007faae69c9698...>, #<Recipe:0x00007faae692a110...>]
