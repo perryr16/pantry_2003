@@ -13,4 +13,11 @@ class Pantry
     @stock[ingredient] += count
   end
 
+  def enough_ingredients_for?(recipe)
+    recipe.ingredients_required.each do |reqd_ingredient|
+      return false if @stock[reqd_ingredient[0]] < reqd_ingredient[1]
+    end
+    return true
+  end
+
 end
