@@ -24,10 +24,3 @@ class CookBookTest < MiniTest::Test
   end
 
 end
-
-#
-# # => #<CookBook:0x00007faae6a42228 @recipes=[]>
-#
-#
-#
-# # => [#<Recipe:0x00007faae69c9698...>, #<Recipe:0x00007faae692a110...>]
