@@ -39,9 +39,7 @@ class CookBook
       one_ingredient[:total_calories] = ingredient.calories * count
       ingredient_details << one_ingredient
     end
-    ingredient_details = ingredient_details.sort_by do |details|
-      details[:total_calories]
-    end.reverse
+    ingredient_details = ingredient_details.sort_by {|details| details[:total_calories]}.reverse
     ingredient_details.map { |details| details.delete(:total_calories)}
     ingredient_details
   end
